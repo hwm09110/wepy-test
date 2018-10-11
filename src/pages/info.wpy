@@ -1,0 +1,410 @@
+<style lang="scss">
+  .cls::after{
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+  .school-name{
+    height: 110rpx;
+    line-height: 110rpx;
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #3f3f3f;
+    border-bottom: 2rpx solid #dcdcdc;
+  }
+  .title-box{
+    padding: 49rpx 36rpx 41rpx 42rpx;
+    .title{
+      font-size: 36rpx;
+      color: #3f3f3f;
+      font-weight: bold;
+      float: left;
+    }
+    .btn-wrap{
+      float: right;
+      width: 243rpx;
+      height: 120rpx;
+      position: relative;
+      .btn-image{
+        width: 243rpx;
+        height: 120rpx;
+      }
+      .btn-text{
+        position: absolute;
+        left: 0;
+        top:15rpx;
+        display: inline-block;
+        width: 100%;
+        font-size:30rpx;
+        color: #fff;
+        text-align: center;
+      }
+    }
+  }
+  .form-wrap{
+    .form-item{
+      padding: 0 42rpx;
+      margin-bottom: 51rpx;
+      .star{
+        color: #f73b3b;
+        display: inline;
+      }
+      .label{
+        float: left;
+        font-size: 30rpx;
+        font-weight: bold;
+        color: #3f3f3f;
+        margin-top: 20rpx;
+      }
+      .content{
+        float:right;
+        input{
+          border:2rpx solid #dcdcdc;
+          height: 72rpx;
+          width: 324rpx;
+          padding-left: 5rpx;
+        }
+      }
+    }
+    // 上传头像
+    .upload-head-wrap{
+      .label{
+        float:none;
+      }
+      .content{
+        float: none;
+        .upload-tips{
+          display: block;
+          font-size: 25rpx;
+          color: #ffb000;
+          display: block;
+          padding: 20rpx 0 44rpx;
+        }
+        .upload-box{
+          .uploaded-box{
+            float: left;
+            .image{
+              width: 155rpx;
+              height: 224rpx;
+              border-radius: 12rpx;
+              border:4rpx solid #b3deff;
+              overflow: hidden;
+            }
+            .preview-btn{
+              margin-top: 12rpx;
+            }
+            .btn-wrap{
+              float: right;
+              width: 155rpx;
+              height: 88rpx;
+              position: relative;
+              .btn-image{
+                width: 155rpx;
+                height: 88rpx;
+              }
+              .btn-text{
+                position: absolute;
+                left: 0;
+                top:8rpx;
+                display: inline-block;
+                width: 100%;
+                font-size:25rpx;
+                color: #fff;
+                text-align: center;
+              }
+            }
+          }
+          .operate-box{
+            float:right;
+            width: 413rpx;
+            .upload-btn{
+              display: block;
+              width: 413rpx;
+              height: 70rpx;
+              line-height: 70rpx;
+              text-align: center;
+              border-radius: 12rpx;
+              // border:4rpx solid #b3deff;
+              margin-bottom: 22rpx;
+              padding: 0;
+              background-color:#fff;
+              color: #47aefe;
+              font-size: 30rpx;
+            }
+            .choose-tips{
+              color: #8a9199;
+              font-size: 25rpx;
+              line-height: 2;
+            }
+          }
+        }
+      }
+    }
+    .single-choose{
+      .choose-item{
+        width: 144rpx;
+        height: 72rpx;
+        line-height: 72rpx;
+        text-align: center;
+        border:2rpx solid #dcdcdc;
+        color: #8a9199;
+        display: inline-block;
+        font-size: 32rpx;
+        &.down{
+          border-color:#47aefe;
+          color:#47aefe;
+        }
+        &:nth-child(2){
+          margin-left: 36rpx;
+        }
+      }
+    }
+    .select-choose{
+      width: 328rpx;
+      height: 72rpx;
+      border:2rpx solid #dcdcdc;
+      position:relative;
+      .selected-text{
+        display: inline-block;
+        width: 278rpx;
+        height: 72rpx;
+        line-height: 72rpx;
+        padding-left: 12rpx;
+        border-right: 2rpx solid #dcdcdc;
+        font-size: 25rpx;
+        color: #8a9199;
+      }
+      .arrow-down{
+        position: absolute;
+        right: 10rpx;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 10rpx solid transparent;
+        border-right: 10rpx solid transparent;
+        border-top: 10rpx solid #666;
+      }
+    }
+    //宿舍信息
+    .room-info{
+      .label{
+        float: none;
+        display: block;
+        margin-bottom: 36rpx;
+      }
+      .content{
+        float: none;
+        .select-choose{
+          display: inline-block;
+          width: 198rpx;
+          .selected-text{
+            display: inline-block;
+            width: 152rpx;
+          }
+          &:nth-child(2){
+            margin-left: 30rpx;
+          }
+          &:nth-child(3){
+            margin-left: 30rpx;
+          }
+        }
+      }
+    }
+    .phone-tips{
+      position: relative;
+      top:-20rpx;
+      color: #8a9199;
+      font-size: 24rpx;
+      text-align: right;
+      padding-right: 42rpx;
+    }
+  }
+  .bottom-operate-wrap{
+    overflow: hidden;
+    background-color: #efeff4;
+    height: 250rpx;
+    .submit-btn{
+      width: 666rpx;
+      height: 92rpx;
+      line-height: 92rpx;
+      text-align: center;
+      border-radius: 46rpx;
+      background-color: #47aefe;
+      color: #fff;
+      font-size: 34rpx;
+      margin:44rpx auto 26rpx;
+    }
+    .submit-tips{
+      text-align: center;
+      color: #8a9199;
+      font-size: 24rpx;
+      display: block;
+    }
+  }
+</style>
+<template>
+  <view class="page-container">
+    <view class="school-name">宏途中学</view>
+    <view class="title-box cls">
+      <text class="title">学生资料登记表</text>
+      <view class="btn-wrap">
+        <image class="btn-image"  src="../image/btn_query.png"></image>
+        <text class="btn-text">学生资料查询</text>
+      </view>
+    </view>
+    <view class="form-wrap">
+      <view class="form-item cls">
+        <view class="label">学生姓名：<view class="star">*</view></view>
+        <view class="content">
+           <input type="text" />
+        </view>
+      </view>
+      <view class="form-item upload-head-wrap">
+        <view class="label">学生照片：<view class="star">*</view></view>
+        <view class="content">
+          <view class="upload-tips">本照片用于校园考勤管理和学生卡制作，请按照要求上传</view>
+          <view class="upload-box cls">
+            <view class="uploaded-box">
+              <view class="image">
+                <image style="width: 100%; height: 100%; background-color: #fff;" mode="scaleToFill" src="{{headSrc}}"></image>
+              </view>
+              <view class="btn-wrap preview-btn">
+                <image class="btn-image"  src="../image/btn_preview.png"></image>
+                <text class="btn-text">预览效果</text>
+              </view>
+            </view>
+            <view class="operate-box">
+              <button class="upload-btn" @tap="handleUpload">拍照上传</button>
+              <view class="choose-tips">照片必须是近期正面免冠，纯色背景头像，头部占照片尺寸2/3，不得使用美颜的图片修饰。</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="form-item cls">
+        <view class="label">性别：</view>
+        <view class="content">
+           <view class="single-choose">
+             <view class="choose-item down">男</view>
+             <view class="choose-item">女</view>
+           </view>
+        </view>
+      </view>
+      <view class="form-item cls">
+        <view class="label">所在班级：<view class="star">*</view></view>
+        <view class="content">
+           <view class="select-choose">
+             <picker  bindchange="bindPickerChange" value="{{selected_class_index}}" range="{{array}}">
+               <text class="selected-text">{{array[selected_class_index]?array[selected_class_index]:'选择班级'}}</text>
+             </picker>
+             <text class="arrow-down"></text>
+           </view>
+        </view>
+      </view>
+      <view class="form-item cls">
+        <view class="label">是否住宿：<view class="star">*</view></view>
+        <view class="content">
+           <view class="single-choose">
+             <view class="choose-item down">走读</view>
+             <view class="choose-item">住宿</view>
+           </view>
+        </view>
+      </view>
+      <view class="form-item cls room-info">
+        <view class="label">住宿信息：<view class="star">*</view></view>
+        <view class="content">
+           <view class="select-choose">
+             <text class="selected-text">选择宿舍楼</text>
+             <text class="arrow-down"></text>
+           </view>
+           <view class="select-choose">
+             <text class="selected-text">选择宿舍</text>
+             <text class="arrow-down"></text>
+           </view>
+           <view class="select-choose">
+             <text class="selected-text">选择床位</text>
+             <text class="arrow-down"></text>
+           </view>
+        </view>
+      </view>
+      <view class="form-item cls">
+        <view class="label">家长手机号：<view class="star">*</view></view>
+        <view class="content">
+           <input type="number" />
+        </view>
+      </view>
+      <view class="phone-tips">请确保手机号码真实有效，用于学生资料的确认和查询</view>
+      <view class="form-item cls">
+        <view class="label">家长手机号2：</view>
+        <view class="content">
+           <input type="number" />
+        </view>
+      </view>
+    </view>
+    <view class="bottom-operate-wrap">
+      <view class="submit-btn">提交资料</view>
+      <text class="submit-tips">请核对以上信息，确认无误后可提交</text>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Info extends wepy.page {
+    config = {
+      navigationBarTitleText: '学生资料登记表'
+    }
+    components = {
+    }
+
+    mixins = []
+
+    data = {
+      array: ['一年级1班', '一年级2班', '一年级3班', '一年级4班','二年级1班','二年级2班','二年级3班','二年级4班'],
+      selected_class_index:'',
+      headSrc:''
+    }
+
+    computed = {
+      now () {
+        return +new Date()
+      }
+    }
+
+    methods = {
+       bindPickerChange (e) {
+        console.log(e)
+        let active_index = e.detail.value
+        this.selected_class_index = active_index
+        this.$apply()
+      },
+      handleUpload (e) {
+        let self = this
+        wx.chooseImage({
+          count: 1,
+          sizeType: ['original', 'compressed'],
+          sourceType: ['album', 'camera'],
+          success (res) {
+            // tempFilePath可以作为img标签的src属性显示图片
+            console.log(res)
+            const tempFilePaths = res.tempFilePaths[0]
+            self.headSrc = tempFilePaths
+            self.$apply()
+          }
+        })
+      }
+    }
+
+    events = {
+     
+    }
+
+    onLoad() {
+
+    }
+  }
+</script>

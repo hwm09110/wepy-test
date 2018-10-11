@@ -1,0 +1,55 @@
+<style lang="less">
+</style>
+<template>
+  <view class="container">
+    <camera device-position="back" flash="off" binderror="error" style="width: 70%; height: 300px; margin:auto;"></camera>
+    <button type="primary" bindtap="takePhoto">拍照</button>
+    <view>预览{{now}}</view>
+    <image mode="widthFix" src="{{src}}" />
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'camera'
+    }
+    components = {
+    }
+
+    mixins = []
+
+    data = {
+        src:''
+    }
+
+    computed = {
+      now () {
+        return +new Date()
+      }
+    }
+
+    methods = {
+        takePhoto () {
+            let self = this
+            const ctx = wx.createCameraContext()
+            ctx.takePhoto({
+                quality: 'high',
+                success: (res) => {
+                    console.log(res.tempImagePath)
+                    this.src = res.tempImagePath
+                    self.$apply()
+                }
+            })
+        }
+    }
+
+    events = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>
